@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Poker Game</string>
+    <string name="play">Play</string>
+    <string name="how_to_play">How To Play</string>
+    <string name="lose">You have lost please click new game to try again</string>
+    <string name="newHand">Please click new hand to play another round</string>
+    <string name="winGame">You have won the game please click new game to play again</string>
+
+    <string name="cpuFold">The computer has folded, please click new hand.</string>
+    <string name="cpuRaise">The computer has raised</string>
+    <string name="cpuCall">The computer has called</string>
+
+
+
+    <string name="royaleflush">You have a royal flush</string>
+    <string name="straightflush">You have a straight flush</string>
+    <string name="fourkind">You have a four of a kind</string>
+    <string name="fullhouse">You have a fullhouse</string>
+    <string name="flush">You have a flush</string>
+    <string name="straight">You have a straight</string>
+    <string name="threekind">You have a three of a kind</string>
+    <string name="twopair">You have two pairs</string>
+    <string name="pair">You have a pair</string>
+    <string name="highcard">You only have a high card</string>
+
+
+    <string name="win">You won!</string>
+    <string name="tie">Tie game, splitting pot.</string>
+    <string name="lost">You lost.</string>
+</resources>

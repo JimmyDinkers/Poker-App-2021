@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.game.pokergame.Gameboard">
+
+
+    <Button
+        android:id="@+id/new_hand"
+        android:layout_width="71dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="52dp"
+        android:onClick="onnew_handClick"
+        android:text="New Hand"
+        android:textSize="7sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_game" />
+
+    <Button
+        android:id="@+id/new_game"
+        android:layout_width="71dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="52dp"
+        android:onClick="onnewgameClick"
+        android:text="New Game"
+        android:textSize="7sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/raise"
+        android:layout_width="71dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="316dp"
+        android:onClick="onraiseClick"
+        android:text="Raise"
+        android:textSize="7sp"
+        app:layout_constraintStart_toEndOf="@+id/call"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/call"
+        android:layout_width="71dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="316dp"
+        android:onClick="onCallClick"
+        android:text="Call"
+        android:textSize="7sp"
+        app:layout_constraintStart_toEndOf="@+id/fold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/fold"
+        android:layout_width="71dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="316dp"
+        android:onClick="onfoldClick"
+        android:text="Fold"
+        android:textSize="7sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/playerhand2"
+        android:layout_width="61dp"
+        android:layout_height="77dp"
+        android:layout_marginEnd="236dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/cardreference" />
+
+    <ImageView
+        android:id="@+id/playerhand1"
+        android:layout_width="61dp"
+        android:layout_height="77dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/playerhand2"
+        app:srcCompat="@drawable/cardreference" />
+
+    <ImageView
+        android:id="@+id/river4"
+        android:layout_width="74dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toEndOf="@+id/river3"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageView
+        android:id="@+id/river5"
+        android:layout_width="74dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toEndOf="@+id/river4"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageView
+        android:id="@+id/river1"
+        android:layout_width="74dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageView
+        android:id="@+id/river2"
+        android:layout_width="74dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toEndOf="@+id/river1"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageView
+        android:id="@+id/river3"
+        android:layout_width="74dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toEndOf="@+id/river2"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/cardback" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="364dp"
+        android:text="CPU Player"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/cPUcard2"
+        android:layout_width="57dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="360dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/cardback" />
+
+    <ImageView
+        android:id="@+id/cPUcard1"
+        android:layout_width="57dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="380dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:srcCompat="@drawable/cardback" />
+
+    <TextView
+        android:id="@+id/PotMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="392dp"
+        android:text="$$$"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/CPUMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        android:text="CPU Money:"
+        app:layout_constraintStart_toEndOf="@+id/cPUcard1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/PlayerMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="96dp"
+        android:text="Your Money:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/playerhand2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
