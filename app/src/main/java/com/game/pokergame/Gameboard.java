@@ -511,6 +511,8 @@ public class Gameboard extends AppCompatActivity {
                 } else {
                     HandCheck.evalCard();
                     HandCheckBot.evalCardBot();
+                    mOppHand1.setImageResource(setCard(oppcard1));
+                    mOppHand2.setImageResource(setCard(oppcard2));
                     if (HandCheck.win == 1) {
                         Toast.makeText(this, R.string.highcard, Toast.LENGTH_SHORT).show();
                     }
