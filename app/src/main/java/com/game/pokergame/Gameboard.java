@@ -79,6 +79,7 @@ public class Gameboard extends AppCompatActivity {
 
         playercard1= deck.get(0);
         playercard2= deck.get(1);
+
         rivercard1=deck.get(2);
         rivercard2=deck.get(3);
         rivercard3=deck.get(4);
@@ -166,6 +167,8 @@ public class Gameboard extends AppCompatActivity {
             else
             { HandCheck.evalCard();
                 HandCheckBot.evalCardBot();
+                mOppHand1.setImageResource(setCard(oppcard1));
+                mOppHand2.setImageResource(setCard(oppcard2));
                 if (HandCheck.win == 1 ) {
                     Toast.makeText(this, R.string.highcard, Toast.LENGTH_SHORT).show();
                 }
@@ -366,10 +369,86 @@ public class Gameboard extends AppCompatActivity {
 
         int raise = rand.nextInt(5);
         int decider = rand.nextInt(24);
+
+        int storageD2 = 0;
+        int storageD3 = 0;
+        int storageD4 = 0;
+        int storageD5 = 0;
+        int storageD6 = 0;
+        int knownStrength = 0;
+        //Information can be hidden from the bot by setting cards to 53. Such a number will not
+        //register in the checks. Thus, the bot can only use revealed cards to influence its
+        //decisions.
+
+        switch (cardsVisible){
+            case 0: //No cards revealed.
+                storageD2 = deck.get(2);
+                deck.set(2, 53);
+
+                storageD3 = deck.get(3);
+                deck.set(3,53);
+
+                storageD4 = deck.get(4);
+                deck.set(4, 53);
+
+                storageD5 = deck.get(5);
+                deck.set(5,53);
+
+                storageD6 = deck.get(6);
+                deck.set(6, 53);
+
+                HandCheckBot.evalCardBot();
+                knownStrength = HandCheckBot.winBot;
+
+                deck.set(2, storageD2);
+                deck.set(3, storageD3);
+                deck.set(4, storageD4);
+                deck.set(5, storageD5);
+                deck.set(6, storageD6); //Return values to original
+                break;
+            case 1: //Flop cards revealed.
+
+                storageD5 = deck.get(5);
+                deck.set(5,53);
+
+                storageD6 = deck.get(6);
+                deck.set(6, 53);
+
+                HandCheckBot.evalCardBot();
+                knownStrength = HandCheckBot.winBot;
+
+                deck.set(5, storageD5);
+                deck.set(6, storageD6); //Return values to original
+                break;
+            case 2: //Turn card revealed.
+
+                storageD6 = deck.get(6);
+                deck.set(6, 53);
+
+                HandCheckBot.evalCardBot();
+                knownStrength = HandCheckBot.winBot;
+
+                deck.set(6, storageD6); //Return values to original
+                break;
+            case 3: //All cards revealed.
+                HandCheckBot.evalCardBot();
+                knownStrength = HandCheckBot.winBot;
+
+                break;
+
+        }
+
+        decider = decider + knownStrength; //Stronger hands mean the bot will be more aggressive
+
+        if(playerBet == 500){ //Usually triggered if the player has raised. Makes the CPU
+            //more likely to fold.
+            decider = decider - 4;
+        }
+
         if (oppMoney == 0) {
             decider = 1;
         }
-        if (decider == 0) //computer folds
+        if (decider <= 0) //computer folds
         {
             if (oppMoney == 0) {
                 Toast.makeText(this, R.string.winGame, Toast.LENGTH_SHORT).show();
